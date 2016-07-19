@@ -24,7 +24,7 @@ function createButton(currentPage) {
   pageButton.id = 'pg' + currentPage;
   pageButton.appendChild(pageNumber);
   document.body.appendChild(pageButton);
-  pageButton.addEventListener('click', displayStudents);
+  pageButton.addEventListener('click', function(){displayStudents(currentPage)});
 }
 //Displays students to screen on load as well as when button is pressed.
 function displayStudents(testing) {
