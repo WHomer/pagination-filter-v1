@@ -6,6 +6,7 @@
 //Solution: Adding pagination and a filter to search for students
 
 var i = 0;
+var displayRecords = 0;
 var students = document.getElementsByClassName('student-item');
 var student = "";
 var studentsPerPage = 1;
@@ -27,11 +28,15 @@ function createButton(currentPage) {
   pageButton.addEventListener('click', function(){displayStudents(currentPage)});
 }
 //Displays students to screen on load as well as when button is pressed.
-function displayStudents(testing) {
-  console.log(testing);
+function displayStudents(pageNumber) {
+
+  console.log(pageNumber);
+  //Current page number  x students per page minus students per page to get you the lowest value
+  displayRecords = pageNumber * studentsPerPage - studentsPerPage;
   for (i = 0; i < studentsPerPage; i++){
-    studentRecord = i;
-    student = students[studentRecord];
+    student = students[displayRecords];
+    //increments by 1 to display next record.
+    displayRecords++;
     //sets style of display to block, default is none
     student.style.display = 'block';
   }
@@ -45,6 +50,6 @@ for (i = 1; i <= pageCount; i++ ) {
 
 
 
-//displayStudents(); //onload displaysStudents function is ran
+displayStudents(1); //value of 1 is as if it was loading the first page.
 
 
