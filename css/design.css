@@ -123,3 +123,17 @@ body{
   display: none;
 }
 
+.studentPageButtons {
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 3px 8px;
+  text-decoration: none;
+  color: #4ba6c3;
+}
+
+.studentPageButtons:hover {
+  background-color: #4ba6c3;
+  color: #fff;
+  /*transform: scale(1.2);*/
+}
+
