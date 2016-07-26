@@ -91,8 +91,11 @@ function searchStudents(searchString) {
   if (searchString != null) {
     for (i =0; i < studentCount; i++){
       var studentName = document.getElementsByTagName('H3')[i].innerHTML;
-      var n = studentName.search(searchString);
-      if (n > -1) {
+      var studentEmail = document.getElementsByClassName('email')[i].innerHTML;
+      var studentNameResults = studentName.search(searchString);
+      var studentEmailResults = studentEmail.search(searchString);
+      console.log(studentEmail);
+      if (studentNameResults > -1 || studentEmailResults > -1) {
         studentArray.push(i);
       }
     }
@@ -109,6 +112,9 @@ function runSearch() {
   searchValue = new RegExp(searchValue, 'i');
   searchStudents(searchValue);
 }
+
+//hide all students
+hideStudents();
 
 searchStudents(); // Run the searchStudents function.
 //Adds event listener to the search button
