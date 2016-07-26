@@ -48,8 +48,7 @@ function displayStudents(pageNumber){
       var n = studentArray[i];
       //displays the student-item class
       if (students[n] != null) {
-        document.getElementsByClassName('student-item')[n].className= 'student-item cf show-class';
-        //document.getElementsByClassName('student-item')[n].style.webkitTransition = 'opacity 5s';
+        document.getElementsByClassName('student-item')[n].className = 'student-item cf show-class';
       }
     }
   }else{

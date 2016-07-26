@@ -46,8 +46,8 @@ body{
 .student-list{
 
 }
-
   .student-item{
+    opacity: 0;
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
     border-bottom: 1px solid #eaeaea;
@@ -122,12 +122,21 @@ body{
 
     /* new code */
 .show-class {
-   display: block;
+  opacity: 1;
+  transition: opacity 1s .5s;
+  visibility: visible;
+  /*display: block;*/
  }
 
 .hide-class {
-  display: none;
+
+  opacity: 0;
+  transition: opacity 5s;
+  visibility: hidden;
+
+  /*display: none;*/
 }
+
 
 .studentPageButtons {
   border: 1px solid #eaeaea;
