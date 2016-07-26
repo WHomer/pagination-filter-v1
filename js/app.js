@@ -46,11 +46,10 @@ function displayStudents(pageNumber){
     for (i = displayRecords; i < (studentsPerPage+displayRecords); i++){
       //sets position of n to position of student-item class
       var n = studentArray[i];
-      //gets the correct student-item class
-      student = document.getElementsByClassName('student-item')[n];
       //displays the student-item class
-      if (student != null) {
-        student.style.display = 'block';
+      if (students[n] != null) {
+        document.getElementsByClassName('student-item')[n].className= 'student-item cf show-class';
+        //document.getElementsByClassName('student-item')[n].style.webkitTransition = 'opacity 5s';
       }
     }
   }else{
@@ -71,7 +70,7 @@ function displayStudents(pageNumber){
 function hideStudents() {
   //remove all currently displayed students
   for (i = 0; i < studentCount; i++){
-    students[i].style.display = 'none';
+    document.getElementsByClassName('student-item')[i].className= 'student-item cf hide-class';
   }
   //Clear div #record
   document.getElementById('record').innerHTML = '';
@@ -94,7 +93,6 @@ function searchStudents(searchString) {
       var studentEmail = document.getElementsByClassName('email')[i].innerHTML;
       var studentNameResults = studentName.search(searchString);
       var studentEmailResults = studentEmail.search(searchString);
-      console.log(studentEmail);
       if (studentNameResults > -1 || studentEmailResults > -1) {
         studentArray.push(i);
       }

@@ -44,8 +44,8 @@ body{
     }
 
 .student-list{
-}
 
+}
 
   .student-item{
     margin: 0 0 20px 0;
@@ -122,8 +122,9 @@ body{
 
     /* new code */
 .show-class {
-  display: block;
-}
+   display: block;
+ }
+
 .hide-class {
   display: none;
 }
