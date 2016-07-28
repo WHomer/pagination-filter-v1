@@ -110,6 +110,17 @@ function runSearch() {
   searchStudents(searchValue);
 }
 
+//Appending Search Input and Button
+var searchInput = document.createElement('input');
+var searchButton = document.createElement('button');
+var searchContainer = document.getElementsByClassName('student-search')[0];
+//Create search input
+searchContainer.appendChild(searchInput).id = 'searchInput';
+document.getElementById('searchInput').placeholder = 'Search for students...';
+//Create search button
+searchContainer.appendChild(searchButton).id = 'search';
+document.getElementById('search').innerHTML = 'Search';
+
 //hide all students
 hideStudents();
 
